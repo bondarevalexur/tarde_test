@@ -20,15 +20,14 @@ function ChartContainer(props: ChartContainerProps) {
     data, yDomain, chartWidth, pixelsPerPoint, containerRef,
   } = props;
 
-  console.log(yDomain[1] - yDomain[0]);
   return (
     <div
       ref={containerRef}
-      className="w-full scrollbar-thin scrollbar-thumb-blue-300 scrollbar-track-gray-100"
+      className="w-full scrollbar-thin scrollbar-thumb-blue-300 overflow-x-scroll scrollbar-track-gray-100 mt-[140px]"
       style={{ height: `${(yDomain[1] - yDomain[0]) * pixelsPerPoint * 20}px` }}
     >
       <ResponsiveContainer width={chartWidth} height="100%">
-        <ComposedChart data={data} margin={{ top: 10, right: 30, left: 20, bottom: 20 }}>
+        <ComposedChart data={data} margin={{ top: 20, right: 0, left: 0, bottom: 20 }}>
           <XAxis dataKey="time" scale="band" type="category" tickFormatter={time => time} />
           <YAxis
             tickCount={(yDomain[1] - yDomain[0]) / 10}

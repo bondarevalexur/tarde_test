@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { API_KEY, INTERVALS_MS, OUTPUT_SIZE, TIME_ZONE } from "../constants.ts";
+import { INTERVALS_MS, OUTPUT_SIZE, TIME_ZONE } from "../constants.ts";
+import { API_KEY } from "shared/constants.ts";
 
 interface Stock {
   symbol: string;

@@ -10,7 +10,8 @@ import { useChartScaling } from "./hooks/useChartScaling";
 
 import useStateStore from "./store";
 
-import {  INTERVALS, SYMBOLS } from "./constants.ts";
+import {  INTERVALS } from "./constants.ts";
+import { SYMBOLS } from "shared/constants.ts";
 
 import { IKlineData } from "./interface.ts";
 
@@ -47,7 +48,7 @@ const CandlestickChart: React.FC = () => {
   const yDomain = useChartScaling(data, containerHeight, pixelsPerPoint);
 
   return (
-    <div className="relative pt-30" style={{ width: "100vw", height: "100vh" }}>
+    <div className="relative pt-30w-full min-h-[50vh]">
       <ChartHeader
         value={pixelsPerPoint}
         onChange={updatePixels}
